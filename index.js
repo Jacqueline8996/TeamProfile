@@ -29,62 +29,31 @@ const employeeQueston = () =>
             message: 'What is the Employee email?',
             name: 'employeeEmail'
         },
-        //Specific quetsion for Engineer 
-        // {
-        //     type: 'input',
-        //     message: 'What is the Employee email?',
-        //     name: 'employeeEmail'
-        // },
-        // //specific question 
+       // Specific quetsion for Engineer 
+       {
+            when: (response) => response.role === jobRank[0],
+            type: "input",
+            message: "what is your git hub?",
+            name:"github",
+        },
+        //specific question for intern
 
-        // {
-        //     type: 'input',
-        //     message: 'What is the Employee email?',
-        //     name: 'employeeEmail'
-        // },
-        // //specific question for Intern 
-        //  {
-        //     type: 'input',
-        //     message: 'What is the Employee email?',
-        //     name: 'employeeEmail'
-        // },
+        {
+            when: (response) => response.role === jobRank[1],
+            type: "input",
+            message: "what is your School?r",
+            name:"school",
+        },
+        //specific question for manager
+        {
+            when: (response) => response.role === jobRank[2],
+            type: "input",
+            message: "what is your office number?",
+            name:"officeNumber",
+        },
 
-    
     ])  
     .then((response) =>{
-        //enginer question
-        // if (response.rank === jobRank[0]) {
-        //     console.log("this is a Engineer");
-        //     inquirer.prompt([
-        //         {
-        //         type: "input",
-        //         message: "what is your git hub?",
-        //         name:"github",
-        //         },
-        //     ])
-        // }
-        // //Intern question
-        // if (response.rank === jobRank[1]) {
-        //     console.log("this is a intern");
-        //     inquirer.prompt([
-        //         {
-        //         type: "input",
-        //         message: "what is your School?r",
-        //         name:"phoneNumber",
-        //         },
-        //     ])
-        // }
-        // //Manager extra question
-        // if (response.rank === jobRank[2]) {
-        //     console.log("this is a manager");
-        //     inquirer.prompt([
-        //         {
-        //         type: "input",
-        //         message: "what is your office number?",
-        //         name:"school",
-        //         },
-        //     ])
-        // }
 
 
     
