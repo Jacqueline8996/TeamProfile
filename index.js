@@ -31,25 +31,25 @@ const employeeQueston = () =>
         },
        // Specific quetsion for Engineer 
        {
-            when: (response) => response.role === jobRank[0],
             type: "input",
             message: "what is your git hub?",
             name:"github",
+            when: (response) => response.rank === jobRank[0],
         },
         //specific question for intern
 
         {
-            when: (response) => response.role === jobRank[1],
             type: "input",
             message: "what is your School?r",
             name:"school",
+            when: (response) => response.rank === jobRank[1],
         },
         //specific question for manager
         {
-            when: (response) => response.role === jobRank[2],
             type: "input",
             message: "what is your office number?",
             name:"officeNumber",
+            when: (response) => response.rank === jobRank[2],
         },
 
     ])  
