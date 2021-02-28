@@ -1,8 +1,28 @@
 //Importing data and programs from  othere folders
 const inquirer = require("inquirer");
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 
 const jobRank = ['Engineer', 'Intern','Manager']
+// function Person(employeeName,employeeID,employeeEmail,rank){
+//     this.employeeName = employeeName;
+//     this.employeeID = employeeID;
+//     this.employeeEmail = employeeEmail;
+//     this.rank = rank;
+//     if (rank === jobRank[0]){
+//         this.github = github;
+//     };
+//     if (rank === jobRank[1]){
+//         this.school = school;
+//     };
+//     if (rank === jobRank[2]){
+//         this.officeNumber = of;
 
+//     };
+
+
+// }
 
 
 //start the program 
@@ -50,6 +70,7 @@ const TaskTodo = () =>{
 function exitWindow(){
    
     console.log("Thank you Your page has been generated good Bye")
+    // console.log("list of employees",employee);
     return 
 }
 //ask the user in nodes what question,and then put the information into a read me file
@@ -118,9 +139,41 @@ const employeeQueston = () =>
         },
 
     ]) .then((response) =>{
-            
-            console.log("my response are",response)
-            TaskTodo();
+
+        let eName = response.employeeName;
+        let eID = response.employeeName;
+        let eEmail = response.employeeEmail;
+        let eRank = response.rank;
+        console.log("my response",response)
+
+        // // const addRecruit = ({ eName, employeeID, eEmail, officeNumber, github, school, eRank}) => {
+        //     console.log("my response are",response)
+        //     //enginer 
+        //     switch(response.rank){
+        //     //enginer
+        //     case(jobRank[0]):
+        //         let eGit = response.github;
+        //         employee = new Engineer(eName, employeeID, eEmai, eGit);
+        //         console.log("Engineer has been added!");
+        //         break;
+        //     //intern
+        //     case(jobRank[1]):
+        //         let eSchool = response.school;
+        //         employee = new Intern(eName, employeeID, eEmai, eSchool);
+        //         console.log("Intern has been added!");
+
+        //         break;
+        //     //manger
+        //     case(jobRank[1]):
+        //         let eOffice = response.officeNumber;
+        //         employee = new Manager(eName, employeeID, eEmai, eOffice);
+        //         console.log("Manager has been added!");
+        //         break;
+        //     }
+        // }
+        // addRecruit();
+        TaskTodo();
+        
        
          
     }
