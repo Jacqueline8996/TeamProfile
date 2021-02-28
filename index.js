@@ -3,8 +3,56 @@ const inquirer = require("inquirer");
 
 const jobRank = ['Engineer', 'Intern','Manager']
 
+
+
+//start the program 
+const startScreen = () =>{
+    console.log("Welcome to the Team ProfileGenerator!")
+    console.log("Here you can add teams to a team and profile page!")
+}
+
+//figures out what they want to do 
+const TaskTodo = () =>{
+    inquirer.prompt([
+        //option of what you want to do 
+        {
+            type: 'list',
+            message: 'What is the employee position',
+            choices: ["Add Employee","Exit"],
+            name: 'optionChoices',
+            loop: false
+        },
+
+    ])
+     .then((response) =>{
+         //goes into the second portion
+         
+        if(response.optionChoices[0] === response.optionChoices[0]){
+            let keepAsk = true;
+            console.log("what did i chooose",response.optionChoices )
+            employeeQueston(keepAsk);
+
+        }
+        else{
+            // 
+            console.log("what did i chooose",response.optionChoices )
+            let keepAsk = false;
+            employeeQueston(keepAsk);
+    
+        
+            
+        }
+         
+    });
+}
+
+function exitWindow(){
+   
+    console.log("Thank you Your page has been generated good Bye")
+    return 
+}
 //ask the user in nodes what question,and then put the information into a read me file
-const employeeQueston = () =>
+const employeeQueston = (keepAsk) =>
     inquirer.prompt([
         //Basic QUesiton for everyone 
         {
@@ -52,14 +100,38 @@ const employeeQueston = () =>
             when: (response) => response.rank === jobRank[2],
         },
 
-    ])  
-    .then((response) =>{
+    ])
+        .then((response) =>{
+
+        //  let myResponse = response
+         console.log("my response are",response)
+         //keeps requesting until false
+         if(keepAsk === false){
+            console.log("keep ask",keepAsk);
+            exitWindow();
+            return 
+         }else{
+            console.log("keep ask",keepAsk);
+            TaskTodo();
+         }
+         
+        }
+);
 
 
+
+
+
+const main = () =>{
+    startScreen();
     
-        console.log("my response are",response)
-    });
-    
+    TaskTodo();
 
 
-employeeQueston();
+
+
+
+}
+
+
+main();
