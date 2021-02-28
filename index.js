@@ -29,17 +29,18 @@ const TaskTodo = () =>{
          
         if(response.optionChoices[0] === response.optionChoices[0]){
             let keepAsk = true;
+            console.log("what is keepsk",keepAsk)
             console.log("what did i chooose",response.optionChoices )
-            employeeQueston(keepAsk);
+            goMainQues(response.optionChoices);
+            
 
         }
         else{
             // 
             console.log("what did i chooose",response.optionChoices )
             let keepAsk = false;
-            employeeQueston(keepAsk);
-    
-        
+            console.log("what is keepsk",keepAsk)
+            goMainQues(response.optionChoices);
             
         }
          
@@ -52,7 +53,23 @@ function exitWindow(){
     return 
 }
 //ask the user in nodes what question,and then put the information into a read me file
-const employeeQueston = (keepAsk) =>
+function goMainQues(keepGoing){
+
+    //keeps requesting until false
+    if(keepGoing === "Exit"){
+        // console.log("keep ask",keepAsk);
+        exitWindow();
+        return 
+    }else{
+        // console.log("keep ask",keepAsk);
+        employeeQueston();
+        
+        
+    }
+
+
+}
+const employeeQueston = () =>
     inquirer.prompt([
         //Basic QUesiton for everyone 
         {
@@ -100,22 +117,15 @@ const employeeQueston = (keepAsk) =>
             when: (response) => response.rank === jobRank[2],
         },
 
-    ])
-        .then((response) =>{
-
-        //  let myResponse = response
-         console.log("my response are",response)
-         //keeps requesting until false
-         if(keepAsk === false){
-            console.log("keep ask",keepAsk);
-            exitWindow();
-            return 
-         }else{
-            console.log("keep ask",keepAsk);
+    ]) .then((response) =>{
+            
+            console.log("my response are",response)
             TaskTodo();
-         }
+       
          
-        }
+    }
+   
+        
 );
 
 
@@ -124,7 +134,6 @@ const employeeQueston = (keepAsk) =>
 
 const main = () =>{
     startScreen();
-    
     TaskTodo();
 
 
