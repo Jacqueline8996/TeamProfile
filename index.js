@@ -5,6 +5,8 @@ const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
 
 const jobRank = ['Engineer', 'Intern','Manager']
+let employeeInfo = [];
+let employeesArray = [];
 // function Person(employeeName,employeeID,employeeEmail,rank){
 //     this.employeeName = employeeName;
 //     this.employeeID = employeeID;
@@ -141,41 +143,45 @@ const employeeQueston = () =>
     ]) .then((response) =>{
 
         let eName = response.employeeName;
-        let eID = response.employeeName;
+        let eID = response.employeeID;
         let eEmail = response.employeeEmail;
         let eRank = response.rank;
         console.log("my response",response)
 
-        // // const addRecruit = ({ eName, employeeID, eEmail, officeNumber, github, school, eRank}) => {
-        //     console.log("my response are",response)
-        //     //enginer 
-        //     switch(response.rank){
-        //     //enginer
-        //     case(jobRank[0]):
-        //         let eGit = response.github;
-        //         employee = new Engineer(eName, employeeID, eEmai, eGit);
-        //         console.log("Engineer has been added!");
-        //         break;
-        //     //intern
-        //     case(jobRank[1]):
-        //         let eSchool = response.school;
-        //         employee = new Intern(eName, employeeID, eEmai, eSchool);
-        //         console.log("Intern has been added!");
+        
+        console.log("my response are",response)
+        //enginer 
+        switch(response.rank){
+        //enginer
+        case(jobRank[0]):
+            let eGit = response.github;
+            console.log("variable", eName, eID, eEmail, eGit)
+            employeeInfo = new Engineer(eName, eID, eEmail,eRank, eGit);
+            employeesArray.push(employeeInfo);
+            console.log("Engineer has been added!");
+            break;
+        case(jobRank[1]):
+            let eSchool = response.school;
+            console.log("variable", eName, eID, eEmail, eGit)
+            employeeInfo = new Intern(eName, eID, eEmail, eRank,eSchool);
+            employeesArray.push(employeeInfo);
+            console.log("Intern has been added!");
+            break;
+        //manger
+        case(jobRank[1]):
+            let eOffice = response.officeNumber;
+            console.log("variable", eName, eID, eEmail, eGit)
+            employeeInfo = new Manager(eName, eID, eEmail, eRank,eOffice);
+            employeesArray.push(employeeInfo);
+            console.log("Manager has been added!");
+            break;
+        }
 
-        //         break;
-        //     //manger
-        //     case(jobRank[1]):
-        //         let eOffice = response.officeNumber;
-        //         employee = new Manager(eName, employeeID, eEmai, eOffice);
-        //         console.log("Manager has been added!");
-        //         break;
-        //     }
-        // }
-        // addRecruit();
+
         TaskTodo();
+
         
        
-         
     }
    
         
@@ -188,11 +194,6 @@ const employeeQueston = () =>
 const main = () =>{
     startScreen();
     TaskTodo();
-
-
-
-
-
 }
 
 
