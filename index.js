@@ -53,14 +53,16 @@ const TaskTodo = () =>{
             let keepAsk = true;
             console.log("what is keepsk",keepAsk)
             console.log("what did i chooose",response.optionChoices )
-            goMainQues(response.optionChoices);
+            employeeInfo = goMainQues(response.optionChoices);
             
-
+            // employeesArray.push(employeeInfo);
+            // console.log(employeesArray);
         }
         else{
             // 
             console.log("what did i chooose",response.optionChoices )
             let keepAsk = false;
+
             console.log("what is keepsk",keepAsk)
             goMainQues(response.optionChoices);
             
@@ -70,7 +72,7 @@ const TaskTodo = () =>{
 }
 
 function exitWindow(){
-   
+    console.log("my array ",employeesArray);
     console.log("Thank you Your page has been generated good Bye")
     // console.log("list of employees",employee);
     return 
@@ -157,27 +159,36 @@ const employeeQueston = () =>
             let eGit = response.github;
             console.log("variable", eName, eID, eEmail, eGit)
             employeeInfo = new Engineer(eName, eID, eEmail,eRank, eGit);
+            console.log("my employe info is ",employeeInfo);
             employeesArray.push(employeeInfo);
+            // console.log("my employe info is ",employeeInfo);
+            console.log(employeesArray);
             console.log("Engineer has been added!");
             break;
         case(jobRank[1]):
             let eSchool = response.school;
-            console.log("variable", eName, eID, eEmail, eGit)
+            console.log("variable", eName, eID, eEmail, eSchool)
             employeeInfo = new Intern(eName, eID, eEmail, eRank,eSchool);
+            console.log("my employe info is ",employeeInfo);
             employeesArray.push(employeeInfo);
+            // console.log("my employe info is ",employeeInfo);
+
             console.log("Intern has been added!");
             break;
         //manger
-        case(jobRank[1]):
+        case(jobRank[2]):
             let eOffice = response.officeNumber;
-            console.log("variable", eName, eID, eEmail, eGit)
+            console.log("variable", eName, eID, eEmail, eOffice)
             employeeInfo = new Manager(eName, eID, eEmail, eRank,eOffice);
+            console.log("my employe info is ",employeeInfo);
             employeesArray.push(employeeInfo);
+            // console.log("my employe info is ",employeeInfo);
             console.log("Manager has been added!");
             break;
+    
         }
-
-
+        // employeesArray.push(employeeInfo);
+        // console.log(employeesArray);
         TaskTodo();
 
         
@@ -193,7 +204,10 @@ const employeeQueston = () =>
 
 const main = () =>{
     startScreen();
+    
     TaskTodo();
+    
+   
 }
 
 
