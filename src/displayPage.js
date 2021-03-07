@@ -28,7 +28,7 @@ const html = makeHTML(teamArray);
 
 
 //Generates html body for the boxes for manager
-const generateManager =({employeeName,employeeID,rank,employeeEmail,officeNum}) =>
+const generateManager =({employeeName,employeeID,rank,employeeEmail,officeNumber}) =>
 `<div class="card" style="width: 18rem;" >
     <div class="card-header" id=${rank}>
     <h3>${employeeName}</h3>
@@ -38,7 +38,7 @@ const generateManager =({employeeName,employeeID,rank,employeeEmail,officeNum}) 
         <ul class="list-group list-group-flush">
             <li class="list-group-item">${employeeID}</li>
             <li class="list-group-item">${employeeEmail}</li>
-            <li class="list-group-item">${officeNum}</li>
+            <li class="list-group-item">${officeNumber}</li>
         </ul>
     </div>
 </div>`
