@@ -10,33 +10,12 @@ const buildMyTeam = (employeesArray) => {
     teamArray = employeesArray?.map((rank) => {
         console.log("list",employeesArray);
       if (rank instanceof Manager) {
-          console.log("list",rank);
-          special =rank.officeNumber;
-        //console.log("what have i got",employeesArray.employeeName, employeesArray.employeeID,rank,employeesArray.employeeEmail,special);
-        console.log("what have i got",rank.employeeName ,rank.employeeID,rank.rank,rank.employeeEmail,special);
-        // return generateMember(employeesArray.employeeName, employeesArray.employeeID,rank,employeesArray.employeeEmail,special);
         return generateManager(rank);
       } else if (rank instanceof Engineer) {
-        special = rank.github;
-        console.log("what have i got",rank,rank.employeeEmail,special);
-        console.log("what have i got",rank.employeeName ,rank.employeeID,rank.rank,rank.employeeEmail,special);
-        // return generateMember(employeesArray.employeeName, employeesArray.employeeID,rank,employeesArray.employeeEmail,special);
-        
         return generateEngineer(rank);
       } else if (rank instanceof Intern) {
-        myname =rank.employeeName;
-        idNum =rank.employeeID;
-        myrank = rank.rank;
-        myemail = rank.employeeEmail
-        special = "school";
-
-        // console.log("what have i got",rank.employeeName ,rank.employeeID,rank.rank,rank.employeeEmail,special);
-        // return generateMember(rank.employeeName, rank.employeeID,rank.rank,rank.employeeEmail,special);
-        // console.log("what have i got",rank)
-        // return generateMember(rank,special);
         return generateIntern(rank);
-        // return generateMember(myname,idNum,myrank,myemail,special);
-        // return generateMember(rank);
+       
       }
 });
 const html = makeHTML(teamArray);
@@ -47,28 +26,7 @@ const html = makeHTML(teamArray);
 };
 
 
-// //Generates the boxes  for each member
-// const generateMember =({employeeName,employeeID,rank,employeeEmail,special}) =>
-
-// `<div class="container-fluid">
-// <div class ="row" id ="info">
-//     <div class="card" style="width: 18rem;" >
-//         <div class="card-header" id=${rank}>
-//         <h3>${employeeName}</h3>
-//         <i class="fas fa-coffee"><h3>${rank}</h3></i>
-//         </div>
-//         <div class = "space">
-//             <ul class="list-group list-group-flush">
-//                 <li class="list-group-item">${employeeID}</li>
-//                 <li class="list-group-item">${employeeEmail}</li>
-//                 <li class="list-group-item">${special}</li>
-//             </ul>
-//         </div>
-//     </div>
-// </div>
-// </div>`
-
-//Generates the boxes  for each member
+//Generates the boxes for manager
 const generateManager =({employeeName,employeeID,rank,employeeEmail,officeNum}) =>
 
 `<div class="container-fluid">
@@ -88,7 +46,8 @@ const generateManager =({employeeName,employeeID,rank,employeeEmail,officeNum}) 
     </div>
 </div>
 </div>`
-//Generates the boxes  for each member
+
+//Generates the boxes  for engineer
 const generateEngineer =({employeeName,employeeID,rank,employeeEmail,github}) =>
 
 `<div class="container-fluid">
@@ -108,7 +67,8 @@ const generateEngineer =({employeeName,employeeID,rank,employeeEmail,github}) =>
     </div>
 </div>
 </div>`
-//Generates the boxes  for each member
+
+//Generates the boxes  for intern 
 const generateIntern=({employeeName,employeeID,rank,employeeEmail,school}) =>
 
 `<div class="container-fluid">
