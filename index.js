@@ -3,29 +3,11 @@ const inquirer = require("inquirer");
 const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
+const displayPage = require("./src/displayPage.js");
 
 const jobRank = ['Engineer', 'Intern','Manager']
 let employeeInfo = [];
 let employeesArray = [];
-// function Person(employeeName,employeeID,employeeEmail,rank){
-//     this.employeeName = employeeName;
-//     this.employeeID = employeeID;
-//     this.employeeEmail = employeeEmail;
-//     this.rank = rank;
-//     if (rank === jobRank[0]){
-//         this.github = github;
-//     };
-//     if (rank === jobRank[1]){
-//         this.school = school;
-//     };
-//     if (rank === jobRank[2]){
-//         this.officeNumber = of;
-
-//     };
-
-
-// }
-
 
 //start the program 
 const startScreen = () =>{
@@ -73,7 +55,8 @@ const TaskTodo = () =>{
 
 function exitWindow(){
     console.log("my array ",employeesArray);
-    console.log("Thank you Your page has been generated good Bye")
+    displayPage(employeesArray);
+    console.log("Thank you Your page has been generated good Bye");
     // console.log("list of employees",employee);
     return 
 }
@@ -206,8 +189,6 @@ const main = () =>{
     startScreen();
     
     TaskTodo();
-    
-   
 }
 
 
