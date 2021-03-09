@@ -31,14 +31,14 @@ const html = makeHTML(teamArray);
 const generateManager =({employeeName,employeeID,rank,employeeEmail,officeNumber}) =>
 `<div class="card" style="width: 18rem;" >
     <div class="card-header" id=${rank}>
-    <h3>${employeeName}</h3>
+    <h3>Name:${employeeName}</h3>
     <i class="fas fa-coffee"><h3>${rank}</h3></i>
     </div>
     <div class = "space">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">${employeeID}</li>
-            <li class="list-group-item">${employeeEmail}</li>
-            <li class="list-group-item">${officeNumber}</li>
+            <li class="list-group-item">Employee Position:${employeeID}</li>
+            <li class="list-group-item">Employee Email:${employeeEmail}</li>
+            <li class="list-group-item">Office Number:${officeNumber}</li>
         </ul>
     </div>
 </div>`
@@ -47,14 +47,14 @@ const generateManager =({employeeName,employeeID,rank,employeeEmail,officeNumber
 const generateEngineer =({employeeName,employeeID,rank,employeeEmail,github}) =>
 `<div class="card" style="width: 18rem;" >
     <div class="card-header" id=${rank}>
-    <h3>${employeeName}</h3>
+    <h3>Name:${employeeName}</h3>
     <i class="fas fa-coffee"><h3>${rank}</h3></i>
     </div>
     <div class = "space">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">${employeeID}</li>
-            <li class="list-group-item">${employeeEmail}</li>
-            <li class="list-group-item">${github}</li>
+            <li class="list-group-item">Employee Position:${employeeID}</li>
+            <li class="list-group-item">Employee Email:${employeeEmail}</li>
+            <li class="list-group-item">Git Hub:${github}</li>
         </ul>
     </div>
 </div>`
@@ -63,14 +63,14 @@ const generateEngineer =({employeeName,employeeID,rank,employeeEmail,github}) =>
 const generateIntern=({employeeName,employeeID,rank,employeeEmail,school}) =>
 `<div class="card" style="width: 18rem;" >
     <div class="card-header" id=${rank}>
-    <h3>${employeeName}</h3>
+    <h3>Name:${employeeName}</h3>
     <i class="fas fa-coffee"><h3>${rank}</h3></i>
     </div>
     <div class = "space">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">${employeeID}</li>
-            <li class="list-group-item">${employeeEmail}</li>
-            <li class="list-group-item">${school}</li>
+            <li class="list-group-item">Employee Position:${employeeID}</li>
+            <li class="list-group-item">Employee Email:${employeeEmail}</li>
+            <li class="list-group-item">School: ${school}</li>
         </ul>
     </div>
 </div>`
