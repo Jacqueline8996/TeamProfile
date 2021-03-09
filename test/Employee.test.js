@@ -36,21 +36,21 @@ test("getemployeeName() should retun Jane",() =>{
 });
 
 //getting the paramater and fetching id
-test("getemployeeID() should retun 2",() =>{
-    const employeeID  = "jane";
+test("getemployeeID() should retun 22",() =>{
+    const employeeID  = 22;
     const person = new Employee("name",employeeID,"employee@gmail.com","Engineer");
     expect(person.getemployeeID()).toEqual(employeeID);
 });
 
 //getting the paramater and fetching email
-test("getemployeeID() should retun 2",() =>{
+test("getemployeeID() should retun employee@gmail.com",() =>{
     const employeeEmail = "employee@gmail.com";
     const person = new Employee("name",22,employeeEmail,"Engineer");
     expect(person.getemployeeName()).toEqual(employeeEmail);
 });
 
-//getting the paramater and fetching rank
-test("getrank() should retun 2",() =>{
+//getting the paramater and fetching rank aka role
+test("getrank() should retun Engineer",() =>{
     const rank  = "Engineer";
     const person = new Employee("name",22,"employee@gmail.com",rank);
     expect(person.getrank()).toEqual(rank);
