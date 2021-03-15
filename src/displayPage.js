@@ -9,7 +9,6 @@ let teamArray;
 //dettermins weather the what paramaters to push throught 
 const buildMyTeam = (employeesArray) => {
     teamArray = employeesArray?.map((rank) => {
-        console.log("list",employeesArray);
       if (rank instanceof Manager) {
         return generateManager(rank);
       } else if (rank instanceof Engineer) {

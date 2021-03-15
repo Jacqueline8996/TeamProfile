@@ -21,7 +21,7 @@ const TaskTodo = () =>{
         //option of what you want to do 
         {
             type: 'list',
-            message: 'What is the employee position',
+            message: 'What Do you want to add an Employee?',
             choices: ["Add Employee","Exit"],
             name: 'optionChoices',
             loop: false
@@ -33,13 +33,13 @@ const TaskTodo = () =>{
          
         if(response.optionChoices[0] === response.optionChoices[0]){
            
-            console.log("what did i chooose",response.optionChoices )
+            // console.log("what did i chooose",response.optionChoices )
             employeeInfo = goMainQues(response.optionChoices);
             
         }
         else{
             
-            console.log("what did i chooose",response.optionChoices )
+            // console.log("what did i chooose",response.optionChoices )
             goMainQues(response.optionChoices);
             
         }
@@ -136,7 +136,6 @@ const employeeQueston = () =>
         //adds manger
         case(jobRank[2]):
             let eOffice = response.officeNumber;
-            console.log("variable", eName, eID, eEmail, eOffice)
             employeeInfo = new Manager(eName, eID, eEmail, eRank,eOffice);
             employeesArray.push(employeeInfo);
             console.log("Manager has been added!");
