@@ -4,8 +4,8 @@
 * [ProjectDescription](#ProjectDescription)
 * [ProjectInstallationInstructions](#ProjectInstallationInstructions)
 * [ProjectUsage](#ProjectUsage)
-* [Project_Contributors](#ProjectContributors)
-* [Project_Test](#ProjectTest)
+* [ProjectContributors](#ProjectContributors)
+* [ProjectTest](#ProjectTest)
 * [License](#Projectlicense)
 * [ContactInformation](#ContactInformation)
 
