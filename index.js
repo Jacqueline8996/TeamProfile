@@ -37,8 +37,6 @@ const TaskTodo = () =>{
             console.log("what did i chooose",response.optionChoices )
             employeeInfo = goMainQues(response.optionChoices);
             
-            // employeesArray.push(employeeInfo);
-            // console.log(employeesArray);
         }
         else{
             // 
@@ -74,7 +72,6 @@ function goMainQues(keepGoing){
         
         
     }
-
 
 }
 const employeeQueston = () =>
@@ -113,7 +110,7 @@ const employeeQueston = () =>
 
         {
             type: "input",
-            message: "what is your School?r",
+            message: "what is your School?",
             name:"school",
             when: (response) => response.rank === jobRank[1],
         },
@@ -131,51 +128,36 @@ const employeeQueston = () =>
         let eID = response.employeeID;
         let eEmail = response.employeeEmail;
         let eRank = response.rank;
-        console.log("my response",response)
-
-        
-        console.log("my response are",response)
-        //enginer 
         switch(response.rank){
+
         //enginer
         case(jobRank[0]):
             let eGit = response.github;
-            console.log("variable", eName, eID, eEmail, eGit)
             employeeInfo = new Engineer(eName, eID, eEmail,eRank, eGit);
-            console.log("my employe info is ",employeeInfo);
             employeesArray.push(employeeInfo);
             // console.log("my employe info is ",employeeInfo);
-            console.log(employeesArray);
             console.log("Engineer has been added!");
             break;
+        //adds intern
         case(jobRank[1]):
             let eSchool = response.school;
-            console.log("variable", eName, eID, eEmail, eSchool)
             employeeInfo = new Intern(eName, eID, eEmail, eRank,eSchool);
-            console.log("my employe info is ",employeeInfo);
             employeesArray.push(employeeInfo);
             // console.log("my employe info is ",employeeInfo);
-
             console.log("Intern has been added!");
             break;
-        //manger
+        //adds manger
         case(jobRank[2]):
             let eOffice = response.officeNumber;
             console.log("variable", eName, eID, eEmail, eOffice)
             employeeInfo = new Manager(eName, eID, eEmail, eRank,eOffice);
-            console.log("my employe info is ",employeeInfo);
             employeesArray.push(employeeInfo);
             // console.log("my employe info is ",employeeInfo);
             console.log("Manager has been added!");
             break;
     
         }
-        // employeesArray.push(employeeInfo);
-        // console.log(employeesArray);
         TaskTodo();
-
-        
-       
     }
    
         
