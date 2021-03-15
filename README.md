@@ -14,8 +14,8 @@
 * These answer will then be converted into a HTML page for easy viewing.
 
 # ProjectInstallationInstructions
-* To Utilize the Application simply fork the repository and then you can use the app 
-* Usage Video : 
+* To Utilize the Application simply fork the repository and then you can use the app,assure a npm install is preformed 
+* Usage Video : https://drive.google.com/file/d/1eiyAfl_d98THhTu6PfnNK_cYWlAWPhMy/view?usp=sharing
 
 # ProjectUsage
 * To create a HTML page base on User input.

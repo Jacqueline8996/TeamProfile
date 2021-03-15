@@ -35,7 +35,7 @@ const generateManager =({employeeName,employeeID,rank,employeeEmail,officeNumber
     </div>
     <div class = "space">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Employee Position:${employeeID}</li>
+            <li class="list-group-item">Employee ID:${employeeID}</li>
             <li class="list-group-item">Employee Email:${employeeEmail}</li>
             <li class="list-group-item">Office Number:${officeNumber}</li>
         </ul>
@@ -51,7 +51,7 @@ const generateEngineer =({employeeName,employeeID,rank,employeeEmail,github}) =>
     </div>
     <div class = "space">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Employee Position:${employeeID}</li>
+            <li class="list-group-item">Employee ID:${employeeID}</li>
             <li class="list-group-item">Employee Email:${employeeEmail}</li>
             <li class="list-group-item">Git Hub:${github}</li>
         </ul>
@@ -67,7 +67,7 @@ const generateIntern=({employeeName,employeeID,rank,employeeEmail,school}) =>
     </div>
     <div class = "space">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Employee Position:${employeeID}</li>
+            <li class="list-group-item">Employee ID:${employeeID}</li>
             <li class="list-group-item">Employee Email:${employeeEmail}</li>
             <li class="list-group-item">School: ${school}</li>
         </ul>
