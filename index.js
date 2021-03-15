@@ -32,18 +32,14 @@ const TaskTodo = () =>{
          //goes into the second portion
          
         if(response.optionChoices[0] === response.optionChoices[0]){
-            let keepAsk = true;
-            console.log("what is keepsk",keepAsk)
+           
             console.log("what did i chooose",response.optionChoices )
             employeeInfo = goMainQues(response.optionChoices);
             
         }
         else{
-            // 
+            
             console.log("what did i chooose",response.optionChoices )
-            let keepAsk = false;
-
-            console.log("what is keepsk",keepAsk)
             goMainQues(response.optionChoices);
             
         }
@@ -52,25 +48,18 @@ const TaskTodo = () =>{
 }
 
 function exitWindow(){
-    console.log("my array ",employeesArray);
     displayPage(employeesArray);
     console.log("Thank you Your page has been generated good Bye");
-    // console.log("list of employees",employee);
     return 
 }
 //ask the user in nodes what question,and then put the information into a read me file
 function goMainQues(keepGoing){
 
-    //keeps requesting until false
     if(keepGoing === "Exit"){
-        // console.log("keep ask",keepAsk);
         exitWindow();
         return 
     }else{
-        // console.log("keep ask",keepAsk);
-        employeeQueston();
-        
-        
+        employeeQueston(); 
     }
 
 }
@@ -135,7 +124,6 @@ const employeeQueston = () =>
             let eGit = response.github;
             employeeInfo = new Engineer(eName, eID, eEmail,eRank, eGit);
             employeesArray.push(employeeInfo);
-            // console.log("my employe info is ",employeeInfo);
             console.log("Engineer has been added!");
             break;
         //adds intern
@@ -143,7 +131,6 @@ const employeeQueston = () =>
             let eSchool = response.school;
             employeeInfo = new Intern(eName, eID, eEmail, eRank,eSchool);
             employeesArray.push(employeeInfo);
-            // console.log("my employe info is ",employeeInfo);
             console.log("Intern has been added!");
             break;
         //adds manger
@@ -152,7 +139,6 @@ const employeeQueston = () =>
             console.log("variable", eName, eID, eEmail, eOffice)
             employeeInfo = new Manager(eName, eID, eEmail, eRank,eOffice);
             employeesArray.push(employeeInfo);
-            // console.log("my employe info is ",employeeInfo);
             console.log("Manager has been added!");
             break;
     
